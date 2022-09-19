@@ -1,58 +1,92 @@
-*{
+* {
   box-sizing: border-box;
+  margin: 0;
 }
 
-.header {
+.header{
+  height: 100vh;
+  background-image:url("https://assets.nflxext.com/ffe/siteui/vlv3/a795ee10-8c6d-467c-8159-254be2b69013/eff5a25b-b5d6-4387-b552-c4f0a3d57db1/KR-ko-20220912-popsignuptwoweeks-perspective_alpha_website_large.jpg")
+}
+
+.header:before {
+  content: " ";
+  background: linear-gradient(to bottom, black, transparent);
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.section {
+  margin: 0 auto;
+  top: 150px;
+  max-width: 950px;
+  padding: 75px 0;
+  position: relative;
   text-align: center;
+  width: 100%;
+  z-index: 1;
   color: white;
 }
-.section{
-  margin: 0 auto;
-    max-width: 950px;
-    padding: 75px 0;
-    position: relative;
-    text-align: center;
-    width: 100%;
-    z-index: 1;
-    color: white;
-}
+
 
 #logo {
   background-color: transparent;
-    bottom: 0;
-    height: 5rem;
-    left: 0;
-    margin: 0 auto;
-    max-width: 1920px;
-    padding-top: 20px;
-    position: relative;
-    right: 0;
-    top: 0;
-    transition: background-color .5s;
-    width: 100%;
-    z-index: 10;
-    color: red;
-    display: inline-block;
+  bottom: 0;
+  height: 5rem;
+  left: 0;
+  margin: 0 auto;
+  max-width: 1920px;
+  padding-top: 20px;
+  position: relative;
+  right: 0;
+  top: 0;
+  transition: background-color .5s;
+  width: 100%;
+  z-index: 10;
+  color: red;
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
-#start{
+.btn {
   color: white;
   background-color: red;
   padding: 10px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  border-radius: 4px
-}
-.background{
-  bottom: 0;
-    left: 0;
-    overflow: hidden;
-    position: absolute;
-    right: 0;
-    top: -70px;
-    z-index: 0;
-    background: rgba(0,0,0,.4);
-    background-image: linear-gradient(0deg,rgba(0,0,0,.8) 0,transparent 60%,rgba(0,0,0,.8));
+  border-radius: 4px;
+  font-size: 2rem;
 }
 
+h2{
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.login{
+  color: white;
+  background-color: red;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+  width:70px;
+  position: relative;
+  left: 70px;
+}
+
+.background {
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: -70px;
+  z-index: 0;
+  background: rgba(0, 0, 0, .4);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, .8) 0, transparent 60%, rgba(0, 0, 0, .8));
+}
