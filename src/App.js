@@ -7,11 +7,11 @@ import Contents from "./components/Contents";
 
 function App() {
   
-  let [showMore, setShowMore] = useState(true);
 
   return (
     <div>
-      {showMore == true ? <Home setShowMore={setShowMore} />: <Contents/>}
+      <Home/>
+      
     </div>
   );
 }

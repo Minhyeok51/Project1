@@ -1,10 +1,18 @@
-import { Figure, Navbar, Container, Nav, Card } from "react-bootstrap";
+import { Figure, Navbar, Container, Nav, Card,Carousel } from "react-bootstrap";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faTicket,faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons"
+
 function Contents() {
+  let [search,setSearch] = useState(false);
+
   let navStyle = {
     color: "white",
-    zIndex: "10",
-    paddingTop: "20px",
+    padding: "20px",
+    paddingTop:"50px",
+    textAlign:"right",
+    fontSize: "30px",
+    position:"relative"
   };
   let [movies, setMovies] = useState([
     {id: "001",urlPath: "img/movie_image1.jpg"},
@@ -20,7 +28,6 @@ function Contents() {
     {id: "011",urlPath: "img/movie_image11.jpg"},
     {id: "012",urlPath: "img/movie_image12.jpg"},
   ]);
-
   return (
     <div className="contents">
       <Navbar>
@@ -29,21 +36,22 @@ function Contents() {
           <Navbar.Brand href="/" id="logo">
             Movie
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav>
               {/* className="me-auto" */}
-              <Nav.Link href="#home" style={navStyle}>
-                Home
+              <Nav.Link href="https://www.cgv.co.kr/" target={"_blank"} style={navStyle}>
+              <FontAwesomeIcon icon={faTicket}/>
               </Nav.Link>
               <Nav.Link href="#link" style={navStyle}>
-                Link
+                <FontAwesomeIcon icon={faMagnifyingGlass}/>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
       <div className="content_i">현재 상영중인 영화 정보</div>
+
       <Figure className="content_i">
         {movies.map((data, i) => {
           return (
@@ -52,13 +60,13 @@ function Contents() {
               width={171}
               height={180}
               src={movies[i].urlPath}
+              alt="movie"
               id={movies[i].id}
             />
-          );
-        })}
-      </Figure>
+          )})}
+          </Figure> 
     </div>
   );
 }
-
+//맵으로 그려주는 부분을 컴포넌트화 해서 React-slick이용하여 슬라이드 형태로 만들기
 export default Contents;
