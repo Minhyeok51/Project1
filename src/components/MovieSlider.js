@@ -72,7 +72,7 @@ function MovieSlider() {
             <div>
               {console.log(movies)}
                
-              <img src={movies[i].poster_path} width={200} height={200}/>
+              <img src={movies[i].poster_path} width={200} height={200} title={movies[i].title}/>
             </div>
           );
         })}
