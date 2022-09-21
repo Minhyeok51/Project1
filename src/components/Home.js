@@ -1,6 +1,6 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { Navbar, Container, Figure } from "react-bootstrap";
-import Contents from "./Contents";
+import Main from "./Main";
 
 function Home() {
   let navigate = useNavigate();
@@ -35,6 +35,7 @@ function Home() {
                 <button
                   className="btn"
                   onClick={() => {
+                    
                     navigate("/main");
                   }}
                 >
@@ -44,7 +45,7 @@ function Home() {
             </div>
           }
         />
-        <Route path="/main" element={<Contents />}></Route>
+        <Route path="/main" element={<Main/>}></Route>
       </Routes>
     </div>
   );
