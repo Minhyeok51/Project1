@@ -1,12 +1,20 @@
 import "./login.css";
 import { Navbar, Container, Figure } from "react-bootstrap";
-import { useState } from "react";
+import { useEffect, useState ,useRef} from "react";
 
 
 function Login() {
-
-    let [Id,SetId] = useState("")
-    let [Pw,SetPw] = useState("")
+    const idRef = useRef();
+    const pwRef = useRef();
+    useEffect(()=>{
+      setTimeout(()=>idRef.current.focus(),0)
+      return(()=>{
+        clearTimeout()
+      })
+    },[])
+    
+    let [Id,SetId] = useState('')
+    let [Pw,SetPw] = useState('')
 
   return (
     <div className="loginBody">
@@ -22,17 +30,19 @@ function Login() {
           <h1 className="loginText">로그인</h1>
           <form>
             <input
+              ref={idRef}
               className="inputs"
               type="email"
               placeholder="이메일 주소 또는 전화번호"
               onChange={(e)=>{
                 SetId(e.target.value)
-                console.log(e)
+                console.log(e.target.value)
                 
                 }}
             ></input>
             <div>아이디를 입려미;ㅏㄴ어리;ㅁ카ㅓ</div>
             <input
+              ref={pwRef}
               className="inputs"
               type="password"
               placeholder="비밀번호"
@@ -44,15 +54,7 @@ function Login() {
             ></input>
             <br />
             <div>sd</div>
-            <button
-              className="loginbtn"
-              onClick={(e) => {
-                console.log(e)
-                e.preventDefault();
-              }}
-            >
-              로그인
-            </button>
+            <input type="submit" className="loginInput" value="로그인"/>
           </form>
           <span>
             <input type="checkbox" id="check1"></input>

@@ -3,10 +3,11 @@
     height: 100vh;
     position: absolute;
     text-align: center;
+    
     /* background-image:url("https://assets.nflxext.com/ffe/siteui/vlv3/a795ee10-8c6d-467c-8159-254be2b69013/eff5a25b-b5d6-4387-b552-c4f0a3d57db1/KR-ko-20220912-popsignuptwoweeks-perspective_alpha_website_large.jpg"); */
 }
 .loginFormMain{
-    margin-bottom: 90px;
+    margin-bottom: 90px auto;
     padding: 60px 68px 40px;
     height: 600px;
 }
@@ -26,17 +27,18 @@
 }
 
 .loginContainer{
+  
     background-color: rgba(0,0,0,.75);
     border-radius: 4px;
     box-sizing: border-box;
+    display: inline-block;
     align-items: center;
-    margin:80px 400px;
+    margin:30px 400px;
     height: 600px;
     width: 450px;
-    position: absolute;
-    /* padding: 60px 68px 40px; */
+    /* position: absolute; */
 }
-.loginbtn{
+.loginInput{
     color: white;
   background-color: red;
   padding: 8px 5px;

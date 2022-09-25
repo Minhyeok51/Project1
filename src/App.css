@@ -5,12 +5,12 @@
   margin: 0;
 }
 
-.header{
+.homeHeader{
   height: 100vh;
   background-image:url("https://assets.nflxext.com/ffe/siteui/vlv3/a795ee10-8c6d-467c-8159-254be2b69013/eff5a25b-b5d6-4387-b552-c4f0a3d57db1/KR-ko-20220912-popsignuptwoweeks-perspective_alpha_website_large.jpg")
 }
 
-.header:before {
+.homeHeader:before {
   content: " ";
   background: linear-gradient(to bottom, black, transparent);
   position: absolute;
@@ -18,7 +18,7 @@
   height: 40vh;
   width: 100%;
 }
-/* .header:after {
+/* .homeHeader:after {
   content: " ";
   background: linear-gradient(to top, black, transparent);
   position: absolute;
@@ -26,7 +26,7 @@
   height: 40vh;
   width: 100%;
 } */
-.contents{
+.mainContents{
   /* background: linear-gradient(to bottom, black, transparent); */
   background-color: rgb(39, 38, 38);
   position: absolute;
@@ -35,7 +35,7 @@
   width: 100%;
 }
 
-.section {
+.homeSection {
   margin: 0 auto;
   top: 150px;
   max-width: 950px;
@@ -79,7 +79,7 @@
   font-size: 2rem;
 }
 
-.content_i{
+.mainText1{
   color: white;
   font-size: 1.5rem;
   font-weight: 800;
@@ -123,4 +123,7 @@ h2{
 
 }
 
-
+.movies{
+  width: 200px;
+  height: 300px;
+}

@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import {useState,useEffect} from 'react'
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import Home from "./Home"
 function MovieSlider() {
+    let navigate = useNavigate();
     let [movies,setMovies] = useState([]);
 
   let settings = {
@@ -12,7 +14,7 @@ function MovieSlider() {
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     pauseOnHover: true,
     centerMode : true,
     centerPadding :'100px',
@@ -31,12 +33,17 @@ function MovieSlider() {
   // API_KEY =522104ab0e22f171a7b47fa13597f9fc;
   return (
     <div>
-      <Slider {...settings}>
+      <Slider {...settings} >
         {movies.map((data, i) => {
           return (
-            <div>
+            <div className="movies"  key={movies[i].id} >
               {/* {console.log(movies)} */}
-              <img key={movies[i].id} src={'https://image.tmdb.org/t/p/original' + movies[i].poster_path} width={200} height={200} title={movies[i].title}/>
+              <img src={'https://image.tmdb.org/t/p/original' + movies[i].poster_path}
+              width={200} height={200} title={movies[i].title}
+              style={{cursor:"pointer"}} onClick={()=>{
+                navigate("/")
+                console.log("clicked")
+              }}/>
             </div>
           );
         })}

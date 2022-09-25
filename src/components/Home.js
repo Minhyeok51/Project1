@@ -15,7 +15,7 @@ function Home() {
   // }
 
   return (
-    <div className="header">
+    <div className="homeHeader">
       <Routes>
         <Route
           path="/"
@@ -44,7 +44,7 @@ function Home() {
                   </Container>
                 </Navbar>
               </div>
-              <div className="section">
+              <div className="homeSection">
                 {/* <MyModal isOpen={isOpen}/> */}
                 <h1>반갑습니다.</h1>
                 <h2>
