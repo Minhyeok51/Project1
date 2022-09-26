@@ -2,10 +2,14 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import { Navbar, Container, Figure } from "react-bootstrap";
 import Main from "./Main";
 import Login from "./Login";
-
+import { useState } from "react";
+import Modal, { ModalChild } from "./Modal";
 function Home() {
   let navigate = useNavigate();
 
+  const [show, setShow] = useState(false);
+  const onOk = () => setShow(false);
+  const onClick = () => setShow(true);
   return (
     <>
       <div className="homeHeader">
@@ -50,7 +54,7 @@ function Home() {
                       navigate("/main");
                     }}
                   >
-                    둘러보기 
+                    둘러보기
                   </button>
                 </div>
               </div>
@@ -60,7 +64,20 @@ function Home() {
           <Route path="/login" element={<Login />}></Route>
         </Routes>
       </div>
-      <div className="homeFooter">asdsadsadsad</div>
+      <div className="homeFooter">
+        &copy; asdsadsadsad
+        <button onClick={onClick}>버튼을 클릭해보세요</button>
+        {show && (
+          <Modal>
+            <ModalChild
+              title="안내"
+              description="모달은 이렇게 띄울 거예요"
+              onOk={onOk}
+            />
+          </Modal>
+        )}
+      </div>
+      <div id="modal"></div>
     </>
   );
 }
