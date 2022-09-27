@@ -37,7 +37,7 @@ function Login() {
       <Navbar bg="none">
         <Container>
           <Navbar.Brand href="/" id="logo">
-            Movie
+            NETFLIX
           </Navbar.Brand>
         </Container>
       </Navbar>
@@ -71,6 +71,8 @@ function Login() {
           <span>
             <input type="checkbox" id="check1"></input>
             <label htmlFor="check1"></label>
+            <span className="loginInfoSave">로그인 정보 저장</span>
+            <a style={{textDecoration:"none", fontSize:"14px" , color:"#b3b3b3"}} href="https://www.netflix.com/kr/LoginHelp">도움이 필요하신가요?</a>
           </span>
         </div>
       </div>

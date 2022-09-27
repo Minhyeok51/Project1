@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Modal, { ModalChild } from "./Modal";
-
+import "../App.css";
 function MovieSlider() {
   const [movies, setMovies] = useState([]);
   const [movieInfo,setMovieInfo] = useState([])
@@ -15,27 +15,36 @@ function MovieSlider() {
     infinite: true,
     slidesToShow: 5,
     slidesToScroll: 1,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
     centerMode: true,
     centerPadding: "100px",
     // focusOnSelect:true
   };
+const KEY ="522104ab0e22f171a7b47fa13597f9fc"
+const getActionMovies = async()=>{
+  const actionMovies=await axios.get(
+    `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=ko-kR&sort_by=popularity.desc&include_adult=false&include_video=false&page=5&with_genres=28&with_watch_providers=8&with_watch_monetization_types=flatrate`
+  )
+    setMovies(actionMovies.data.results);
+}
 
   useEffect(() => {
-    (async () => {
-      const movies = await axios.get(
-        "https://api.themoviedb.org/3/discover/movie?api_key=522104ab0e22f171a7b47fa13597f9fc&language=ko-KR&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_providers=8&with_watch_monetization_types=flatrate"
-      );
-      setMovies(movies.data.results);
-      console.log(movies.data);
-    })();
+    // (async () => {
+    //   const movies = await axios.get(
+    //     `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=ko-kR&sort_by=popularity.desc&include_adult=false&include_video=false&page=5&with_genres=28&with_watch_providers=8&with_watch_monetization_types=flatrate`
+    //     // "https://api.themoviedb.org/3/discover/movie?api_key=522104ab0e22f171a7b47fa13597f9fc&language=ko-KR&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_watch_providers=8&with_watch_monetization_types=flatrate"
+    //     );
+    //   setMovies(movies.data.results);
+    //   console.log(movies.data);
+    // })();
+    getActionMovies()
   }, []);
-  // API_KEY =522104ab0e22f171a7b47fa13597f9fc;
   return (
     <div>
-      <Slider {...settings}>
+      <div id="modal"></div>
+      <Slider {...settings} style={{margin:"30px"}}>
         {movies.map((data, i) => {
           return (
             <>
@@ -47,8 +56,8 @@ function MovieSlider() {
                     "https://image.tmdb.org/t/p/original" +
                     movies[i].poster_path
                   }
-                  width={200}
-                  height={200}
+                  width={180}
+                  height={300}
                   title={movies[i].title}
                   style={{ cursor: "pointer" }}
                   onClick={() => {
@@ -60,6 +69,8 @@ function MovieSlider() {
                   }}
                 />
               </div>
+                  
+
               {show && (
                 <Modal>
                   <ModalChild
@@ -68,7 +79,8 @@ function MovieSlider() {
                     overview={movieInfo.overview}
                     date={movieInfo.release_date}
                     onOk={onOk}
-                    movies={movies}
+                    // movies={movies}
+                    i={i}
                   />
                 </Modal>
               )}
@@ -76,6 +88,9 @@ function MovieSlider() {
           );
         })}
       </Slider>
+
+      <div className="mainText1">여긴어디</div>
+      
     </div>
   );
 }

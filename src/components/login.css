@@ -3,9 +3,8 @@
     height: 100vh;
     position: absolute;
     text-align: center;
-    
-    /* background-image:url("https://assets.nflxext.com/ffe/siteui/vlv3/a795ee10-8c6d-467c-8159-254be2b69013/eff5a25b-b5d6-4387-b552-c4f0a3d57db1/KR-ko-20220912-popsignuptwoweeks-perspective_alpha_website_large.jpg"); */
-}
+    background-image:url("https://assets.nflxext.com/ffe/siteui/vlv3/a795ee10-8c6d-467c-8159-254be2b69013/eff5a25b-b5d6-4387-b552-c4f0a3d57db1/KR-ko-20220912-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+  }
 .loginFormMain{
     margin-bottom: 90px auto;
     padding: 60px 68px 40px;
@@ -51,27 +50,12 @@
   position: relative;
   font-weight: 600;
 }
-input[type="checkbox"]{
-    display: none;
-  }
-input[type="checkbox"] + label{
-    display: inline-block;
-    margin:5px;
-    width: 16px;
-    height: 16px;
-    border: 1px solid #333;
-    position: relative;
-    background-color:#737373 ;
-  }
-input[id="check1"]:checked + label::after{
-    content:'✔';
-    color: red;
-    font-size: 16px;
-    width: 16px;
-    height: 30px;
-    text-align: center;
-    position: absolute;
-    left: 0;
-    top:0;
-  }
 
+
+  .loginInfoSave{
+    color: #b3b3b3;
+    text-decoration: none;
+    margin: 5px;
+    margin-right: 50px;
+    font-size: 14px;
+  }
