@@ -12,18 +12,18 @@ const Dimmend = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  // background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index:15;
 `;
 
 const ModalContainer = styled.div`
   width: 600px;
-  height : 600px;
+  height : 800px;
   padding: 8px;
   color:white;
   border-radius: 8px;
   background: #111;
-  // box-shadow: 0 4px 16px 0 rgba(249, 202, 36, 0.37);
+  box-shadow: 0 4px 16px 0 rgba(249, 202, 36, 0.37);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   text-align: left;
@@ -36,14 +36,14 @@ const ModalContainer = styled.div`
     border: 1px solid white;
     // outline: none;
     cursor: pointer;
-    // background-color: rgba(0,0,0,.75);
+    background-color: rgba(0,0,0,.75);
     border-radius: 30px;
     float:right;
     z-index:10;
   }
 `;
 
-export const ModalChild = ({ overview,imgPath,title, onOk ,date,movie,i}) => {
+export const ModalChild = ({ overview,imgPath,title, onOk ,date}) => {
   return (
     <Dimmend>
       <ModalContainer>

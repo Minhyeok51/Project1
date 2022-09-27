@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Modal, { ModalChild } from "./Modal";
 import "../App.css";
-function MovieSlider() {
+function MovieSlider({genre_id}) {
   const [movies, setMovies] = useState([]);
   const [movieInfo,setMovieInfo] = useState([])
   const [show, setShow] = useState(false);
@@ -15,31 +15,23 @@ function MovieSlider() {
     infinite: true,
     slidesToShow: 5,
     slidesToScroll: 1,
-    // autoplay: true,
-    autoplaySpeed: 2000,
+    autoplay: true,
+    autoplaySpeed: 3000,
     pauseOnHover: true,
     centerMode: true,
     centerPadding: "100px",
     // focusOnSelect:true
   };
 const KEY ="522104ab0e22f171a7b47fa13597f9fc"
-const getActionMovies = async()=>{
-  const actionMovies=await axios.get(
-    `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=ko-kR&sort_by=popularity.desc&include_adult=false&include_video=false&page=5&with_genres=28&with_watch_providers=8&with_watch_monetization_types=flatrate`
+const getMovies = async()=>{
+  const movies=await axios.get(
+    `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=ko-kR&sort_by=popularity.desc&include_adult=false&include_video=false&page=5&with_genres=${genre_id}&with_watch_providers=8&with_watch_monetization_types=flatrate`
   )
-    setMovies(actionMovies.data.results);
+    setMovies(movies.data.results);
 }
 
   useEffect(() => {
-    // (async () => {
-    //   const movies = await axios.get(
-    //     `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=ko-kR&sort_by=popularity.desc&include_adult=false&include_video=false&page=5&with_genres=28&with_watch_providers=8&with_watch_monetization_types=flatrate`
-    //     // "https://api.themoviedb.org/3/discover/movie?api_key=522104ab0e22f171a7b47fa13597f9fc&language=ko-KR&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_watch_providers=8&with_watch_monetization_types=flatrate"
-    //     );
-    //   setMovies(movies.data.results);
-    //   console.log(movies.data);
-    // })();
-    getActionMovies()
+    getMovies()
   }, []);
   return (
     <div>
@@ -88,9 +80,6 @@ const getActionMovies = async()=>{
           );
         })}
       </Slider>
-
-      <div className="mainText1">여긴어디</div>
-      
     </div>
   );
 }
