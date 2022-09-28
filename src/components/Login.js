@@ -1,4 +1,5 @@
 import "./login.css";
+import "../App.css";
 import { Navbar, Container, Figure } from "react-bootstrap";
 import { useEffect, useState ,useRef} from "react";
 import { useNavigate } from "react-router-dom";

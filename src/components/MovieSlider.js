@@ -1,4 +1,6 @@
 import Slider from "react-slick";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleUp } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -40,7 +42,7 @@ const getMovies = async()=>{
         {movies.map((data, i) => {
           return (
             <>
-              <div className="movies">
+              <div className="movies" >
                 {/* {console.log(movies)} */}
                 <img
                   key={movies[i].id}
@@ -48,10 +50,10 @@ const getMovies = async()=>{
                     "https://image.tmdb.org/t/p/original" +
                     movies[i].poster_path
                   }
-                  width={180}
+                  width={190}
                   height={300}
                   title={movies[i].title}
-                  style={{ cursor: "pointer" }}
+                  style={{ cursor: "pointer" ,borderRadius:"10px"}}
                   onClick={() => {
                     if (data.id === movies[i].id) {
                       console.log(movies[i]);
@@ -61,7 +63,6 @@ const getMovies = async()=>{
                   }}
                 />
               </div>
-                  
 
               {show && (
                 <Modal>
@@ -80,6 +81,7 @@ const getMovies = async()=>{
           );
         })}
       </Slider>
+      
     </div>
   );
 }

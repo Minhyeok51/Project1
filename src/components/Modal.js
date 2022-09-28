@@ -12,8 +12,8 @@ const Dimmend = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index:15;
+  // background: rgba(0, 0, 0, 0.2);
+  z-index:50;
 `;
 
 const ModalContainer = styled.div`
@@ -23,7 +23,7 @@ const ModalContainer = styled.div`
   color:white;
   border-radius: 8px;
   background: #111;
-  box-shadow: 0 4px 16px 0 rgba(249, 202, 36, 0.37);
+  // box-shadow: 0 4px 16px 0 rgba(249, 202, 36, 0.37);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   text-align: left;
@@ -34,11 +34,11 @@ const ModalContainer = styled.div`
     padding: 7px;
     color:white;
     border: 1px solid white;
-    // outline: none;
+    outline: none;
     cursor: pointer;
     background-color: rgba(0,0,0,.75);
     border-radius: 30px;
-    float:right;
+    position:fixed;
     z-index:10;
   }
 `;
@@ -48,7 +48,7 @@ export const ModalChild = ({ overview,imgPath,title, onOk ,date}) => {
     <Dimmend>
       <ModalContainer>
         <FontAwesomeIcon className="icon" icon={faXmark} onClick={onOk} />
-        <img style={{position:"relative", textAlign:"center", verticalAlign:"middle"}} width={550} height={300} src={"https://image.tmdb.org/t/p/original" + imgPath }/>
+        <img style={{position:"relative", textAlign:"center", verticalAlign:"middle",focus:"color:red"}} width={580} height={400} src={"https://image.tmdb.org/t/p/original" + imgPath }/>
         <h3>{title}</h3>
         <p>{overview}</p>
         <p>개봉일:{date}일</p>
