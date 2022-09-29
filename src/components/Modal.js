@@ -12,7 +12,7 @@ const Dimmend = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  // background: rgba(0, 0, 0, 0.2);
+  // background-color: rgba(0, 0, 0, 0.8);
   z-index:50;
 `;
 
@@ -23,7 +23,7 @@ const ModalContainer = styled.div`
   color:white;
   border-radius: 8px;
   background: #111;
-  // box-shadow: 0 4px 16px 0 rgba(249, 202, 36, 0.37);
+  // box-shadow: 100px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   text-align: left;
@@ -36,7 +36,7 @@ const ModalContainer = styled.div`
     border: 1px solid white;
     outline: none;
     cursor: pointer;
-    background-color: rgba(0,0,0,.75);
+    // background-color: rgba(0,0,0,.75);
     border-radius: 30px;
     position:fixed;
     z-index:10;
