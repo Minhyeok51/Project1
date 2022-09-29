@@ -1,47 +1,51 @@
-.loginBody{
-    width: 100vw;
-    height: 100vh;
-    /* position: absolute; */
-    text-align: center;
-    background-image:url("https://assets.nflxext.com/ffe/siteui/vlv3/a795ee10-8c6d-467c-8159-254be2b69013/eff5a25b-b5d6-4387-b552-c4f0a3d57db1/KR-ko-20220912-popsignuptwoweeks-perspective_alpha_website_large.jpg");
-    background-size: cover;
-    background-color: rgba(0,0,0,.75);
-  }
-.loginFormMain{
-    margin-bottom: 90px auto;
-    padding: 60px 68px 40px;
-    height: 600px;
-}
-.loginText{
-    color: white;
-    text-align: left;
-}
-.inputs{
-    width: 100%;
-    height: 40px;
-    padding: 20px;
-    background-color: #333;
-    border-radius: 4px;
-    border: 0px;
-    font-weight: 600;
-    color: white;
-    margin-bottom: 10px;
+.loginBody {
+  width: 100vw;
+  height: 100vh;
+  /* position: absolute; */
+  text-align: center;
+  background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/a795ee10-8c6d-467c-8159-254be2b69013/eff5a25b-b5d6-4387-b552-c4f0a3d57db1/KR-ko-20220912-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+  background-size: cover;
+  background-color: rgba(0, 0, 0, .75);
 }
 
-.loginContainer{
-  
-    background-color: rgba(0,0,0,.75);
-    border-radius: 6px;
-    box-sizing: border-box;
-    display: inline-block;
-    align-items: center;
-    margin:30px 400px;
-    height: 600px;
-    width: 450px;
-    /* position: absolute; */
+.loginFormMain {
+  margin-bottom: 90px auto;
+  padding: 60px 68px 40px;
+  height: 600px;
 }
-.loginInput{
-    color: white;
+
+.loginText {
+  color: white;
+  text-align: left;
+}
+
+.inputs {
+  width: 100%;
+  height: 40px;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 4px;
+  border: 0px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.loginContainer {
+
+  background-color: rgba(0, 0, 0, .75);
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: inline-block;
+  align-items: center;
+  margin: 30px 400px;
+  height: 600px;
+  width: 450px;
+  /* position: absolute; */
+}
+
+.loginInput {
+  color: white;
   background-color: red;
   padding: 8px 5px;
   text-align: center;
@@ -49,11 +53,12 @@
   display: inline-block;
   border-radius: 4px;
   border: 1px;
-  width:100%;
+  width: 100%;
   position: relative;
   font-weight: 600;
 }
-.loginGoogle{
+
+.loginGoogle {
   color: blue;
   background-color: white;
   padding: 8px 5px;
@@ -62,16 +67,16 @@
   display: inline-block;
   border-radius: 4px;
   border: 1px;
-  width:100%;
+  width: 100%;
   position: relative;
   font-weight: 600;
   margin-top: 10px;
 }
 
-  .loginInfoSave{
-    color: #b3b3b3;
-    text-decoration: none;
-    margin: 5px;
-    margin-right: 50px;
-    font-size: 14px;
-  }
+.loginInfoSave {
+  color: #b3b3b3;
+  text-decoration: none;
+  margin: 5px;
+  margin-right: 50px;
+  font-size: 14px;
+}

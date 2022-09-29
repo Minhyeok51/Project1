@@ -3,11 +3,11 @@ import "../App.css";
 import { Navbar, Container, Figure } from "react-bootstrap";
 import { useEffect, useState ,useRef} from "react";
 import { useNavigate } from "react-router-dom";
-// import { authService,firebaseInstance } from "fbase";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import {
-//   faGoogle,
-// } from "@fortawesome/free-brands-svg-icons";
+import { authService,firebaseInstance } from "fbase";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGoogle,
+} from "@fortawesome/free-brands-svg-icons";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -21,10 +21,11 @@ function Login() {
       target: { name },
     } = event;
     let provider;
-    // if (name === "google") {
-      // provider = new firebaseInstance.auth.GoogleAuthProvider();
-    // } 
-    // await authService.signInWithPopup(provider);
+    if (name === "google") {
+      provider = new firebaseInstance.auth.GoogleAuthProvider();
+    } 
+    await authService.signInWithPopup(provider);
+    navigate("/main")
   };
 
     const idRef = useRef();
@@ -51,22 +52,22 @@ function Login() {
     };
     const onSubmit = async (event) => {
       event.preventDefault();
-      // try {
-      //   let data;
-      //   if (newAccount) {
-      //     // creat account
-      //     data = await authService.createUserWithEmailAndPassword(
-      //       email,
-      //       password
-      //     );
-      //   } else {
-      //     // login
-      //     data = await authService.signInWithEmailAndPassword(email, password);
-      //   }
-      //   console.log(data);
-      // } catch (error) {
-      //   setError(error.message);
-      // }
+      try {
+        let data;
+        if (newAccount) {
+          // creat account
+          data = await authService.createUserWithEmailAndPassword(
+            email,
+            password
+          );
+        } else {
+          // login
+          data = await authService.signInWithEmailAndPassword(email, password);
+        }
+        console.log(data);
+      } catch (error) {
+        setError(error.message);
+      }
       navigate('/main')
     };
     // const toggleAccount = () => setNewAccount((prev) => !prev);
@@ -87,7 +88,7 @@ function Login() {
           
           <form onSubmit={onSubmit}>
             <input
-              // ref={idRef}
+              ref={idRef}
               name="email"
               className="inputs"
               type="email"
@@ -105,12 +106,11 @@ function Login() {
               onChange={onChange}
             ></input>
             <br />
-            {/* <div>sd</div> */}
             <input type="submit" className="loginInput" value="로그인"/>
           </form>
-          {/* <button name="google" onClick={onSocialClick} className="loginGoogle">
+          <button name="google" onClick={onSocialClick} className="loginGoogle">
           구글 로그인<FontAwesomeIcon icon={faGoogle} />
-        </button> */}
+        </button>
           <span>
             <input type="checkbox" id="check1"></input>
             <label htmlFor="check1"></label>

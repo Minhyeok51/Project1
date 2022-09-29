@@ -34,7 +34,7 @@ function Main({ scrollTo, showButton }) {
 
   return (
     <div className="mainContents">
-      <Navbar variant="dark" expand="lg">
+      <Navbar variant="dark" expand="lg" className="mainNavbar">
         <Container>
           <Navbar.Brand href="/" id="logo">
             NETFLIX
@@ -66,14 +66,15 @@ function Main({ scrollTo, showButton }) {
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
-
-          <FontAwesomeIcon
-            icon={faTicket}
-            href="https://www.cgv.co.kr/"
-            target={"_blank"}
-            style={navStyle}
-          />
-          <FontAwesomeIcon icon={faMagnifyingGlass} style={navStyle} />
+          <div>
+            <FontAwesomeIcon
+              icon={faTicket}
+              href="https://www.cgv.co.kr/"
+              target={"_blank"}
+              style={navStyle}
+            />
+            <FontAwesomeIcon icon={faMagnifyingGlass} style={navStyle} />
+          </div>
         </Container>
       </Navbar>
 
