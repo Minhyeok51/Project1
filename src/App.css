@@ -264,6 +264,10 @@ h2 {
   cursor: pointer;
 }
 
+.movies :hover{
+  transform: scale(1.1);
+  transition-duration: 0.5s;
+}
 
 @media only screen and (max-width: 900px) {
 
@@ -323,7 +327,7 @@ h2 {
     position: relative;
     margin: 0 auto;
     width: 100%;
-    right: 200px;
+    right: 100px;
   }
 
 }
@@ -337,7 +341,7 @@ h2 {
   .loginContainer {
     position: relative;
     margin: 0 auto;
-    right: 400px;
+    right: 300px;
   }
 }
 

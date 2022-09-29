@@ -8,6 +8,7 @@ function MovieSlider({ genre_id }) {
   const [movieInfo, setMovieInfo] = useState([]);
   const [show, setShow] = useState(false);
   const onOk = () => setShow(false);
+  
   let settings = {
     dots: false,
     infinite: true,
@@ -34,7 +35,7 @@ function MovieSlider({ genre_id }) {
   return (
     <div>
       <div id="modal"></div>
-      <Slider {...settings} style={{ margin: "30px" }}>
+      <Slider {...settings} style={{ margin: "30px"}}>
         {movies.map((data, i) => {
           return (
             <>
