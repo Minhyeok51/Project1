@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Modal, { ModalChild } from "./Modal";
 import "../App.css";
+
 function MovieSlider({ genre_id }) {
   const [movies, setMovies] = useState([]);
   const [movieInfo, setMovieInfo] = useState([]);
@@ -21,14 +22,18 @@ function MovieSlider({ genre_id }) {
     centerPadding: "100px",
     // focusOnSelect:true
   };
-  const KEY = "522104ab0e22f171a7b47fa13597f9fc";
+  const tmdbConfig = {
+    apikey : process.env.REACT_APP_KEY
+    }
+    // console.log(tmdbConfig);
+
   const getMovies = async () => {
     const movies = await axios.get(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=ko-kR&sort_by=popularity.desc&include_adult=false&include_video=false&page=5&with_genres=${genre_id}&with_watch_providers=8&with_watch_monetization_types=flatrate`
+      `https://api.themoviedb.org/3/discover/movie?api_key=${tmdbConfig.apikey}&language=ko-kR&sort_by=popularity.desc&include_adult=false&include_video=false&page=5&with_genres=${genre_id}&with_watch_providers=8&with_watch_monetization_types=flatrate`
     );
     setMovies(movies.data.results);
   };
-
+  
   useEffect(() => {
     getMovies();
   }, []);
